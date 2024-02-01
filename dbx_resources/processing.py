@@ -43,7 +43,7 @@ df_exp.display()
 # COMMAND ----------
 # MAGIC %md
 # MAGIC ## Aggregating the inst pool cost data - it should match the cost in the cost analysis report
-# MAGIC ![chat](https://github.com/wsilveira-usp/azure_dbx_cost_analysis/blob/main/image/tag-costanalysis_charts_instance_pool_cost.png?raw=true)
+# MAGIC ![chat](https://raw.githubusercontent.com/wsilveira-usp/azure_dbx_cost_analysis/main/image/costanalysis_charts_instance_pool_cost.png)
 
 # COMMAND ----------
 df_agg_inst_pool = (
