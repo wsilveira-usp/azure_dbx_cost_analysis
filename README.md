@@ -25,6 +25,8 @@ For charging back VM cost under Instance Pools, upon Instance Pools creation giv
 
 $$ \left( jobDBUCost_a \over allJobsDBUCostInstancePool_a \right) * InstancePoolTotalCost_a $$
 
+This information is available to be exported and processed in reports generated via the Exports option under Settings in Azure Cost Management + Billing.
+
 #### Cost Export
 
 The cost management tool shows the costs associated with DBU consumption and infrastructure. If you instead want to know the number of DBUs consumed, for example to estimate which pre-purchase option fits best for your usage, or holistically split an instance pool VM cost by jobs run on it, a cost export can give a more detailed overview. Using cost exports also allows you to build customized dashboards, automate chargeback or set cost alarms with scheduled exports. 
