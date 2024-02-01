@@ -1,7 +1,7 @@
 ## Simple Azure Databricks Cost Analysis 
 
 
-**TL;DR: This repository show an example of leveraging Databricks tags to distribute instance pool cost among jobs run on it.**
+**TL;DR: This repository shows an example of leveraging Databricks tags to distribute instance pool cost among jobs run on it.**
 
 For Azure Databricks Cost Analysis, the recommendation is to group costs by using resource tags in Azure, which can be even enforced by compute policies. This is especially helpful if resources are spread over multiple hierarchies in Azure or are shared by teams. It is possible to filter costs associated with a specific team, project, ect., by making sure that all resources used by one entity have a common tag. 
 
@@ -21,6 +21,9 @@ The Cost Analysis function of the Azure Cost Management tool allows you to analy
 - Storage costs: 
   - It is not possible to separate storage costs caused by Azure Databricks when using shared storage accounts.
 
+For charging back VM cost under Instance Pools, upon Instance Pools creation give them ID tags. Apply these same ID tags to jobs run per Instance Pools. In this way, it is possible to know which job has run on each Instance Pool. Furthermore, finding the ratio of a job DBU usage against all jobs DBU usage in the Instance Pool will provide the Instance Pool usage percentage of that specific job. Recall that DBU usage is proportional to cluster size and execution time. Finally, multiply the Instance Pool usage percentage of a specific job by the Instance Pool total cost to chargeback the job. In terms of formula:
+
+$$ \left( jobDBUCost_a \over allJobsDBUCostInstancePool_a \right) * InstancePoolTotalCost_a $$
 
 #### Cost Export
 
