@@ -7,7 +7,7 @@ import pyspark.sql.functions as F
 import pyspark.sql.window as W
 
 # COMMAND ----------
-INST_POLL_TAG_NAME = "instance poll internal id"
+INST_POLL_TAG_NAME = "instance poll internal id" # minor typo here
 INST_POLL_TAG_VALUE = "jobs_133"
 
 # JOB_TAG_NAME = "jobs id"
