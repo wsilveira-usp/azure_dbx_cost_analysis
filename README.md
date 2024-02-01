@@ -9,7 +9,7 @@ There are three types of tags for Azure Databricks: Workspace, cluster and pool 
 
 One exception are instance pools. Tags have to be defined before creating a resource and since pools are constantly running, tags do not propagate to the cluster infrastructure. This is shown in the image below, more info [here](https://learn.microsoft.com/en-us/azure/databricks/administration-guide/account-settings/usage-detail-tags#tag-propagation).
 
-![tag propagation](image/tag-propagation.png)
+![tag propagation](https://github.com/wsilveira-usp/azure_dbx_cost_analysis/blob/main/image/tag-propagation.png?raw=true)
 
 The Cost Analysis function of the Azure Cost Management tool allows you to analyze all costs associated with your Azure Databricks usage, such as:
 - Total price for DBUs consumption
