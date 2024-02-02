@@ -82,4 +82,4 @@ df_job.select("billingAccountId", "date", "ProductName", "costInBillingCurrency"
 # COMMAND ----------
 # MAGIC %md
 # MAGIC ## Aggregating the job cost data - total cost (sum of all jobs) should match the cost in the cost analysis report
-# MAGIC ![image](https://raw.githubusercontent.com/wsilveira-usp/azure_dbx_cost_analysis/main/image/costanalysis_charts_job_cost.png)
+# MAGIC ![image](https://raw.githubusercontent.com/wsilveira-usp/azure_dbx_cost_analysis/main/image/jobs_cost.png)
