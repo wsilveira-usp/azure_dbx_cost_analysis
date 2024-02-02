@@ -17,22 +17,24 @@ dbutils.widgets.text("source_table", "cost_analysis.azure.table_name", "Cost Exp
 dbutils.widgets.text("subscription_id", "19a05930-7361-4fba-9f7b-85cf2569e08d", "Azure Subscription ID")
 dbutils.widgets.text("inst_pool_tag_name", INST_POLL_TAG_NAME, "Instance Pool Tag Name")
 dbutils.widgets.text("inst_pool_tag_value", INST_POLL_TAG_VALUE, "Instance Pool Tag Value")
+dbutils.widgets.text("date", "01/31/2024", "Date")
 # dbutils.widgets.text("rg", "", "Azure Resouce Group")
 
 source_table = dbutils.widgets.get("source_table")
 subscription_id = dbutils.widgets.get("subscription_id")
 inst_pool_tag_name = dbutils.widgets.get("inst_pool_tag_name")
 inst_pool_tag_value = dbutils.widgets.get("inst_pool_tag_value")
+date = dbutils.widgets.get("date")
 
 # COMMAND ----------
-df = spark.table(source_table).filter("date = '01/31/2024'")
+df = spark.table(source_table).filter(f"date = '{date}'")
 
 df.display()
 
 # COMMAND ----------
 df_exp = (
     df
-    .filter("date = '01/31/2024'")
+    .filter(f"date = '{date}'")
     .withColumn("expanded_tags", F.from_json(F.col("tags"), "MAP<STRING,STRING>"))
     .select(F.col("*"), F.col(f"expanded_tags.{inst_pool_tag_name}").alias("inst_pool"))
     .filter(f"inst_pool = '{inst_pool_tag_value}'")
